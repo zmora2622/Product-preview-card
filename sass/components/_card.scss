@@ -14,20 +14,6 @@
  object-fit: cover;
  border-top-left-radius: 12px;
  border-top-right-radius: 12px;
- //  z-index: -1;
-//  z-index:;
- &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: red;
-    width: 100%; /* Zajmuje pełną szerokość rodzica */
-    height: 100%; /* Zajmuje pełną wysokość rodzica */
-    z-index: 1; /* Aby było na wierzchu */
-    opacity: 0.5; /* Dodaje przezroczystość, opcjonalne */
-  //   box-shadow: inset 5em 1em gold;
- }
 }
 
 .card__body {
@@ -35,7 +21,6 @@
 }
 
 .card__category {
- //  margin-bottom: 13px;
  text-transform: uppercase;
  font-weight: 500;
  letter-spacing: 5px;
@@ -64,7 +49,7 @@
 .card__price {
  display: flex;
  align-items: center;
- margin: 20px 0 16px;
+ margin: function.to_rem(20px) 0 function.to_rem(16px);
  column-gap: 20px;
 }
 
@@ -87,23 +72,23 @@
 @media (min-width: 40rem) {
  .card {
   flex-direction: row;
-  max-width: 600px;
-  max-height: 450px;
+  max-width: function.to_rem(600px);
+  max-height: function.to_rem(450px);
  }
 
  .card__image {
-  max-width: 300px;
-  border-top-left-radius: 12px;
+  max-width: function.to_rem(300px);
+  border-top-left-radius: function.to_rem(12px);
   border-top-right-radius: 0;
-  border-bottom-left-radius: 12px;
+  border-bottom-left-radius: function.to_rem(12px);
  }
  .card__body {
   padding: function.to_rem(32px);
  }
  .card__header {
-  margin: 20px 0 24px;
+  margin: function.to_rem(20px) 0 function.to_rem(24px);
  }
  .card__price {
-  margin: 26px 0 26px;
+  margin: function.to_rem(26px) 0 function.to_rem(26px);
  }
 }

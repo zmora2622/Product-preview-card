@@ -1,7 +1,9 @@
+@use "../utils/functions" as function;
+
 .container {
  display: flex;
  justify-content: center;
  align-items: center;
  width: 100%;
- max-width: 1440px;
+ max-width: function.to_rem(1440px);
 }
