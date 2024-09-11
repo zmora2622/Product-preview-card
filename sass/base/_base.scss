@@ -1,0 +1,11 @@
+@use "../utils/functions" as function;
+@use "../utils/variables" as variable;
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: variable.$cream;
+ font-size: function.to_rem(variable.$base-font-size);
+ font-family: variable.$font-primary;
+ font-optical-sizing: auto;
+}

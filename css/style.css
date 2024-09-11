@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  border: 0;
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100svh;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+th,
+td {
+  padding: 0;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(30, 38%, 92%);
+  font-size: 0.875rem;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 21.4375rem;
+  max-height: 38.1875rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.75rem;
+}
+
+.card__image {
+  position: relative;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.card__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  width: 100%; /* Zajmuje pełną szerokość rodzica */
+  height: 100%; /* Zajmuje pełną wysokość rodzica */
+  z-index: 1; /* Aby było na wierzchu */
+  opacity: 0.5; /* Dodaje przezroczystość, opcjonalne */
+}
+
+.card__body {
+  padding: 1.5rem;
+}
+
+.card__category {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-size: 0.75rem;
+  color: hsl(228, 12%, 48%);
+}
+
+.card__header {
+  margin: 13px 0 16px;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: hsl(212, 21%, 14%);
+  text-wrap: balance;
+}
+
+.card__text {
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  text-wrap: pretty;
+  color: hsl(228, 12%, 48%);
+}
+
+.card__price {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 16px;
+  column-gap: 20px;
+}
+
+.card__price-after {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(158, 36%, 37%);
+}
+
+.card__price-before {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: hsl(228, 12%, 48%);
+  text-decoration: line-through;
+  line-height: 1.65;
+}
+
+@media (min-width: 40rem) {
+  .card {
+    flex-direction: row;
+    max-width: 600px;
+    max-height: 450px;
+  }
+  .card__image {
+    max-width: 300px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 12px;
+  }
+  .card__body {
+    padding: 2rem;
+  }
+  .card__header {
+    margin: 20px 0 24px;
+  }
+  .card__price {
+    margin: 26px 0 26px;
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  border-radius: 0.5rem;
+  background-color: hsl(158, 36%, 37%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  font-size: 0.875rem;
+  column-gap: 0.625rem;
+}
+.button:hover {
+  background-color: hsl(158, 42%, 18%);
+}

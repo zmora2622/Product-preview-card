@@ -1,0 +1,19 @@
+@use "../utils/functions" as function;
+@use "../utils/variables" as variable;
+
+.button {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 15px 0;
+ border-radius: function.to_rem(8px);
+ background-color: variable.$dark-cyan;
+ color: variable.$white;
+ font-weight: 700;
+ font-size: function.to_rem(14px);
+ column-gap: function.to_rem(10px);
+
+ &:hover {
+  background-color: variable.$deep-aquamarine;
+ }
+}

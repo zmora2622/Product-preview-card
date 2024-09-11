@@ -1,0 +1,109 @@
+@use "../utils/variables" as variable;
+@use "../utils/functions" as function;
+.card {
+ display: flex;
+ flex-direction: column;
+ max-width: function.to_rem(343px);
+ max-height: function.to_rem(611px);
+ background-color: variable.$white;
+ border-radius: function.to_rem(12px);
+}
+
+.card__image {
+ position: relative;
+ object-fit: cover;
+ border-top-left-radius: 12px;
+ border-top-right-radius: 12px;
+ //  z-index: -1;
+//  z-index:;
+ &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 100%; /* Zajmuje pełną szerokość rodzica */
+    height: 100%; /* Zajmuje pełną wysokość rodzica */
+    z-index: 1; /* Aby było na wierzchu */
+    opacity: 0.5; /* Dodaje przezroczystość, opcjonalne */
+  //   box-shadow: inset 5em 1em gold;
+ }
+}
+
+.card__body {
+ padding: function.to_rem(24px);
+}
+
+.card__category {
+ //  margin-bottom: 13px;
+ text-transform: uppercase;
+ font-weight: 500;
+ letter-spacing: 5px;
+ font-size: function.to_rem(12px);
+ color: variable.$dark-grayish-blue;
+}
+
+.card__header {
+ margin: 13px 0 16px;
+ font-family: variable.$font-secondary;
+ font-weight: 700;
+ font-size: function.to_rem(32px);
+ line-height: 1;
+ color: variable.$very-dark-blue;
+ text-wrap: balance;
+}
+
+.card__text {
+ font-weight: 500;
+ font-size: function.to_rem(14px);
+ line-height: 1.65;
+ text-wrap: pretty;
+ color: variable.$dark-grayish-blue;
+}
+
+.card__price {
+ display: flex;
+ align-items: center;
+ margin: 20px 0 16px;
+ column-gap: 20px;
+}
+
+.card__price-after {
+ font-family: variable.$font-secondary;
+ font-size: function.to_rem(32px);
+ font-weight: 700;
+ color: variable.$dark-cyan;
+}
+
+.card__price-before {
+ font-family: variable.$font-primary;
+ font-size: function.to_rem(13px);
+ font-weight: 500;
+ color: variable.$dark-grayish-blue;
+ text-decoration: line-through;
+ line-height: 1.65;
+}
+
+@media (min-width: 40rem) {
+ .card {
+  flex-direction: row;
+  max-width: 600px;
+  max-height: 450px;
+ }
+
+ .card__image {
+  max-width: 300px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 12px;
+ }
+ .card__body {
+  padding: function.to_rem(32px);
+ }
+ .card__header {
+  margin: 20px 0 24px;
+ }
+ .card__price {
+  margin: 26px 0 26px;
+ }
+}
